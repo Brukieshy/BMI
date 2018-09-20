@@ -1,1 +1,33 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
 
+    public static void main(String[] args) {
+   //declare
+    String userName;
+    String greeting;
+    float userWeight;
+    float userHeightFeet;
+    float userHeightInches;
+    float totalInches;
+    float BMI;
+    Scanner keyboard;
+    //initialize
+        keyboard = new Scanner(System.in);
+        System.out.println("What is your name?");
+        userName = keyboard.nextLine();
+        System.out.println("Hello, " + userName + " my name is Bruklyn. How are you? ");
+        greeting = keyboard.nextLine();
+        System.out.println("How much do you weigh?");
+        userWeight = Integer.parseInt(keyboard.nextLine());
+        System.out.println("What is your height (only feet)?");
+        userHeightFeet = Integer.parseInt(keyboard.nextLine());
+        System.out.println("What is your height (inches only)?");
+        userHeightInches = Integer.parseInt(keyboard.nextLine());
+        //calculations
+        totalInches = userHeightFeet * 12 + userHeightInches;
+       BMI=  userWeight / (totalInches * totalInches) * 703;
+        //output
+        System.out.println("According to my calculations, your body mass index (BMI) is " + BMI + ".");
+    }
+}
